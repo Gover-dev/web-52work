@@ -1,0 +1,63 @@
+body {
+    background-color: #111317;
+    color: #ffffff;
+    font-family: "Inter";
+    font-weight: bold;
+}
+
+.form-control {
+    background-color: #2E2F36;
+    color: #ffffff;
+    border-radius: 30px;
+    border: none;
+}
+
+input::-moz-placeholder { /* Для Firefox */
+    color: red;
+}
+   
+input::-webkit-input-placeholder { /* Для Safari и Chrome */
+    color: red;
+}
+
+.form-control:focus {
+    background-color: #2E2F36;
+    color: #ffffff;
+    border-radius: 30px;
+    border: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo_from {
+    height: 100px;
+    font-size: 40px;
+}
+
+.btn {
+    background-color: #393B3E;
+    color: #ffffff;
+    border: none;
+}
+
+.btn:focus {
+    background-color: #393B3E;
+}
+
+.center {
+    text-align: center;
+}
+
+.wrapper {
+    max-width: 400px;
+    min-height: 300px;
+    margin: 15% auto;
+    padding: 40px 30px 30px 30px;
+    background-color: #171820;
+    border-radius: 15px;
+}
