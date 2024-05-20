@@ -12,8 +12,8 @@
 <body>
     <form class="wrapper" action="login.php" method="post">
         <?php if (isset($_GET['error'])) { ?>
-     		<p class="error"><?php echo $_GET['error']; ?></p>
-     	<?php } ?>
+            <p class="error"><?php echo $_GET['error']; ?></p>
+        <?php } ?>
         <div class="center logo_from">
             <img src="assets/img/logo.png">
 

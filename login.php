@@ -14,11 +14,8 @@
         $login = validate($_POST['login']);
         $pass = validate($_POST['password']);
     
-        if (empty($login)) {
-            header("Location: index.php?error=User Name is required");
-            exit();
-        }else if(empty($pass)){
-            header("Location: index.php?error=Password is required");
+        if (empty($login) || empty($pass)) {
+            header("Location: index.php?error=Заполните все поля!");
             exit();
         }else{
             $sql = "SELECT * FROM `users` WHERE login='$login' AND password='$pass'";
@@ -29,16 +26,16 @@
                 $row = mysqli_fetch_assoc($result);
                 if ($row['login'] === $login && $row['password'] === $pass) {
                     $_SESSION['login'] = $row['login'];
-                    $_SESSION['name'] = $row['name'];
+                    $_SESSION['fio'] = $row['fio'];
                     $_SESSION['id'] = $row['id'];
                     header("Location: main.php");
                     exit();
                 }else{
-                    header("Location: index.php?error=Incorect User name or password");
+                    header("Location: index.php?error=Неверное имя пользователя или пароль");
                     exit();
                 }
             }else{
-                header("Location: index.php?error=Incorect User name or password");
+                header("Location: index.php?error=Неверное имя пользователя или пароль");
                 exit();
             }
         }

@@ -5,6 +5,15 @@ body {
     font-weight: bold;
 }
 
+.error {
+    background: #A94442;
+    color: #ffffff;
+    padding: 10px;
+    width: 95%;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+
 .form-control {
     background-color: #2E2F36;
     color: #ffffff;
@@ -32,6 +41,7 @@ input::-webkit-input-placeholder { /* Для Safari и Chrome */
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    color: #ffffff;
 }
 
 .logo_from {
@@ -60,4 +70,37 @@ input::-webkit-input-placeholder { /* Для Safari и Chrome */
     padding: 40px 30px 30px 30px;
     background-color: #171820;
     border-radius: 15px;
+}
+
+.panel_but {
+    float: left;
+    width: 25%;
+    height: 100%;
+}
+
+.panel_main {
+    float: right;
+    width: 75%;
+    background-color: #171820;
+}
+
+.but_panel_active {
+    padding: 10px 20px 10px 10px;
+    border-radius: 9px;
+    text-decoration: none;
+    background-color: #393B3E;
+    color: #ffffff;
+}
+
+.but_panel {
+    padding: 10px 20px 10px 10px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.logout {
+    width: 250px;
+    padding: 10px 20px 10px 10px;
+    text-decoration: none;
+    color: #ffffff;
 }
