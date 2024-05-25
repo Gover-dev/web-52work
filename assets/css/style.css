@@ -73,14 +73,18 @@ input::-webkit-input-placeholder { /* Для Safari и Chrome */
 }
 
 .panel_but {
-    float: left;
+    min-height: 90vh;
     width: 25%;
-    height: 100%;
+    padding: 10px 20px 10px 10px;
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .panel_main {
+    min-height: 100vh;
     float: right;
     width: 75%;
+    height: 100px;
     background-color: #171820;
 }
 
@@ -92,15 +96,10 @@ input::-webkit-input-placeholder { /* Для Safari и Chrome */
     color: #ffffff;
 }
 
-.but_panel {
-    padding: 10px 20px 10px 10px;
-    text-decoration: none;
-    color: #ffffff;
-}
-
 .logout {
+    position: absolute;
+    bottom: 5px;
     width: 250px;
-    padding: 10px 20px 10px 10px;
     text-decoration: none;
     color: #ffffff;
 }

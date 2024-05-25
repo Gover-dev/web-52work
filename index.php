@@ -16,7 +16,6 @@
         <?php } ?>
         <div class="center logo_from">
             <img src="assets/img/logo.png">
-
             <div class="w-100"></div>
         </div>
         <div class="w-100"></div>

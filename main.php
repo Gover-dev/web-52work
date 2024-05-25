@@ -16,8 +16,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['login'])) {
 </head>
 <body>
      <div class="panel_but">
-          <h6><?php echo $_SESSION['fio']; ?></h6>
-          <a class="logout" href="logout.php">Logout</a>
           <div class="w-100"></div>
           <div class="but_panel_active">
                <a class="but_panel_active" href="main.php">Домой</a>
@@ -35,8 +33,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['login'])) {
                <a class="but_panel" href="wallet.php">Счёт</a>
           </div>
      </div>
-     <div class="panel_main">
-
+     <div>
+            <h6 class="logout"><?php echo $_SESSION['fio']; ?></h6>
+            <a class="logout" href="logout.php">Logout</a>
      </div>
 </body>
 </html>
