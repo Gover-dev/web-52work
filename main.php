@@ -32,10 +32,18 @@ if (isset($_SESSION['id']) && isset($_SESSION['login'])) {
           <div class="but_panel">
                <a class="but_panel" href="wallet.php">Счёт</a>
           </div>
+          <?php
+               if ($_SESSION['admin'] == 1) {
+                    echo '<div class="w-100"></div>';
+                    echo '<div class="but_panel">';
+                    echo '     <a class="but_panel" href="control_panel.php">Панель управления</a>';
+                    echo '</div>';
+               };
+          ?>
      </div>
-     <div>
-            <h6 class="logout"><?php echo $_SESSION['fio']; ?></h6>
-            <a class="logout" href="logout.php">Logout</a>
+     <div class="logout">
+          <h6 style="display:inline;" ><?php echo $_SESSION['fio']; ?></h6>
+          <a class="but_logout" href="logout.php"><img src="/assets/icons/door-closed.svg" alt="Bootstrap" width="32" height="32"></i></a>
      </div>
 </body>
 </html>

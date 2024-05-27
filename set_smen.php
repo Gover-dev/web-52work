@@ -1,5 +1,19 @@
 <?php
     session_start();
+    if($_POST['send_chat']){
+        require('assets/data/db.php');
+
+        $messenge = $_POST['send_chat_messenge'];
+        $name = $_SESSION['fio'];
+
+        echo $messenge;
+        echo $name;
+
+        $sql = "INSERT INTO `global_chat`(`message`, `name_send`) VALUES ('$messenge','$name')";
+        mysqli_query($conn_chat, $sql);
+
+        header("Location: chat.php");
+    };
 
     if($_POST['set_smen']){
         require('assets/data/db.php');
@@ -12,8 +26,17 @@
 
             echo $row['id'];
             $num_id = $row['id'];
-    
             $sql_update = "UPDATE `smena` SET `fio_smena`= '$names', `login_user_smena`='$login' WHERE `data_smena` = '$data' and `id` = $num_id AND `fio_smena` = ''";
+            mysqli_query($conn, $sql_update);
+
+            header("Location: smen.php");
+
+        };
+
+        function del_user_smena($data, $names) {
+            require('assets/data/db.php');
+    
+            $sql_update = "UPDATE `smena` SET `fio_smena`= '', `login_user_smena`='' WHERE `data_smena` = '$data' AND `fio_smena` = '$names'";
             mysqli_query($conn, $sql_update);
 
             header("Location: smen.php");
@@ -34,10 +57,9 @@
         echo $num_id;
 
         if($num_id < 1){
-            echo "true";
             add_user_smena($data, $fio, $login);
         }else{
-            header("Location: smen.php");
+            del_user_smena($data, $fio);
         };
 
         mysqli_close($conn);

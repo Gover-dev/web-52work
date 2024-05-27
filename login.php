@@ -1,6 +1,6 @@
 <?
     session_start(); 
-    require_once('data/db.php');
+    require_once('assets/data/db.php');
 
     if (isset($_POST['login']) && isset($_POST['password'])) {
 
@@ -25,9 +25,13 @@
             if (mysqli_num_rows($result) === 1) {
                 $row = mysqli_fetch_assoc($result);
                 if ($row['login'] === $login && $row['password'] === $pass) {
+                    $_SESSION['id'] = $row['id'];
                     $_SESSION['login'] = $row['login'];
                     $_SESSION['fio'] = $row['fio'];
-                    $_SESSION['id'] = $row['id'];
+                    $_SESSION['dateofbirth'] = $row['dateofbirth'];
+                    $_SESSION['pos'] = $row['position'];
+                    $_SESSION['admin'] = $row['admin'];
+                    
                     header("Location: main.php");
                     exit();
                 }else{

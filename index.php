@@ -30,7 +30,7 @@
 
         <div class="w-100"></div>
         <div class="mb-3 center">
-            <button type="submit" class="btn col-md-4">Войти</button>
+            <button type="submit" class="btn btn-dark w-50">Войти</button>
         </div>
     </form>
     

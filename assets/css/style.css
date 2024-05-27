@@ -5,6 +5,11 @@ body {
     font-weight: bold;
 }
 
+a {
+    color: #ffffff; 
+    text-decoration: none;
+}
+
 .error {
     background: #A94442;
     color: #ffffff;
@@ -73,8 +78,9 @@ input::-webkit-input-placeholder { /* Для Safari и Chrome */
 }
 
 .panel_but {
-    min-height: 90vh;
-    width: 25%;
+    position: absolute;
+    height: 100vh;
+    width: 25vw;
     padding: 10px 20px 10px 10px;
     text-decoration: none;
     color: #ffffff;
@@ -83,8 +89,8 @@ input::-webkit-input-placeholder { /* Для Safari и Chrome */
 .panel_main {
     min-height: 100vh;
     float: right;
-    width: 75%;
-    height: 100px;
+    width: 75vw;
+    height: 100vh;
     background-color: #171820;
 }
 
@@ -96,10 +102,114 @@ input::-webkit-input-placeholder { /* Для Safari и Chrome */
     color: #ffffff;
 }
 
+.but_panel {
+    text-decoration: none;
+    padding: 10px 20px 10px 10px;
+    color: #ffffff;
+}
+
 .logout {
+    height: 50px;
     position: absolute;
     bottom: 5px;
-    width: 250px;
-    text-decoration: none;
+    width: 25vw;
     color: #ffffff;
+}
+
+.but_logout {
+    margin: 2% auto;
+    margin-right: 2%;
+    display:inline;
+    color: #ffffff;
+    float: right;
+}
+
+.card {
+    background-color: #393B3E;
+}
+/*CSS CAHT*/
+
+.board_chat{
+    /*background-color: #ffffff1c;*/
+    min-height: 100vh;
+    width: 20vw;
+    position: absolute;
+}
+
+.body_chat {
+    float: right;
+    position: sticky;
+    border-radius: 9px;
+    margin: 1% auto;
+    margin-right: 1%;
+    background-color: #20242D;
+    min-height: 95vh;
+    width: 53vw;
+}
+
+.box_chat{
+    height: 88vh;
+    overflow-y: scroll;
+}
+
+#box_chat::-webkit-scrollbar {
+    width: 10px;
+    background-color: none;
+  }
+  
+#box_chat::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #ffffff1a;
+}
+  
+#box_chat::-webkit-scrollbar-track {
+    border-radius: 10px;
+    height: 100px;
+    background-color: #f9f9fd0c;
+}
+
+.send_panel_chat {
+    float: left;
+    margin-left: 5%;
+    background-color: #ffffff20;
+    border-radius: 9px 0px 0px 9px;
+    height: 5vh;
+    width: 45vw;
+}
+
+.send_but_chat {
+    background-color: #ffffff20;
+    border-radius: 0px 9px 9px 0px;
+    float: left;
+    height: 5vh;
+    width: 5vh;
+}
+
+.global_chat{
+    position: sticky;
+    border-radius: 9px;
+    margin: 5% auto;
+    background-color: #20242D;
+    width: 90%;
+    height: 60px;
+}
+
+.user_messege {
+    background-color: #575A61;
+    border-radius: 0px 9px 9px;
+    position: relative;
+    float: left;
+    width: 25vw;
+    margin: 2% ;
+    text-align: left;
+}
+
+.im_messege {
+    background-color: #575A61;
+    border-radius: 9px 9px 0px;
+    position: relative;
+    float: right;
+    width: 25vw;
+    margin: 2% ;
+    text-align: right;
 }
