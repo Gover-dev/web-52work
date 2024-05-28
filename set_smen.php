@@ -3,13 +3,15 @@
     if($_POST['send_chat']){
         require('assets/data/db.php');
 
+
         $messenge = $_POST['send_chat_messenge'];
         $name = $_SESSION['fio'];
+        $date = date("H:i") . " " . date("Y.m.d");
 
         echo $messenge;
         echo $name;
 
-        $sql = "INSERT INTO `global_chat`(`message`, `name_send`) VALUES ('$messenge','$name')";
+        $sql = "INSERT INTO `global_chat`(`message`, `name_send`, `date`) VALUES ('$messenge','$name', '$date')";
         mysqli_query($conn_chat, $sql);
 
         header("Location: chat.php");

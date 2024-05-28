@@ -200,7 +200,7 @@ input::-webkit-input-placeholder { /* Для Safari и Chrome */
     position: relative;
     float: left;
     width: 25vw;
-    margin: 2% ;
+    margin: 0% 0% 2% 2% ;
     text-align: left;
 }
 
@@ -210,6 +210,73 @@ input::-webkit-input-placeholder { /* Для Safari и Chrome */
     position: relative;
     float: right;
     width: 25vw;
-    margin: 2% ;
+    margin: 0% 2% 2% 0% ;
     text-align: right;
+}
+
+.im_messege_date {
+    float: right;
+    width: 27vw;
+    margin: 0% 2% 0% 0% ;
+    text-align: right;
+    color: #ffffff69;
+    font-size: 14px;
+}
+
+.user_messege_date {
+    float: left;
+    width: 27vw;
+    margin: 0% 0% 0% 2% ;
+    text-align: left;
+    color: #ffffff69;
+    font-size: 14px;
+}
+
+.organizations_panel {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    background-color: #20242D;
+    width: 70vw;
+    height: 80px;
+    align-content: center;
+    font-size: 32px;
+}
+.info_box_conteiner{
+    left: 0px;
+    width: 75vw;
+    height: 100px;
+}
+.info_box{
+    background-color: #20242D;
+    width: 21.6vw;
+    height: 150px;
+    border-radius: 9px;
+    float: left;
+    display: inline-block;
+    margin-left: 35px;
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: lighter;
+    text-align: left;
+    padding-left:15px;
+    padding-top:20px;
+}
+
+.info_but{
+    background-color: #20242D;
+    width: 21.6vw;
+    height: 55px;
+    border-radius: 9px;
+    float: left;
+    display: inline-block;
+    margin-left: 35px;
+    text-align: right;
+}
+
+.info_text_main{
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 25px;
 }

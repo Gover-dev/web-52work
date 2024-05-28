@@ -58,13 +58,15 @@
                         
                         while ($row=mysqli_fetch_assoc($result)) {
                             if ($row["name_send"] == $_SESSION["fio"]) {
+                                echo '<div class="im_messege_date">' . $row["date"] . '</div>';
                                 echo '<div class="im_messege">';
-                                    echo "<h5 style='margin-right: 2%;'>" . $row["name_send"] . "</h5>";
+                                    echo "<h5 style='margin-right: 2%;'>" . $row["name_send"] . " " . "</h5>";
                                     echo  "<p style='margin-right: 2%;'>" . $row["message"] . '</p>';
                                 echo '</div>';
                             } else {
+                                echo '<div class="user_messege_date">' . $row["date"] . '</div>';
                                 echo '<div class="user_messege">';
-                                    echo "<h5 style='margin-left: 2%;'>" . $row["name_send"] . "</h5>";
+                                    echo "<h5 style='margin-left: 2%;'>" . $row["name_send"] . " " . $row["date"] . "</h5>";
                                     echo  "<p style='margin-left: 2%;'>" . $row["message"] . '</p>';
                                 echo '</div>';
                             }
