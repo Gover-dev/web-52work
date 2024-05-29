@@ -280,3 +280,56 @@ input::-webkit-input-placeholder { /* Для Safari и Chrome */
     font-weight: bold;
     margin-top: 25px;
 }
+
+.wallet_box{
+    background-color: #20242D;
+    border-radius: 9px;
+    width: 70vw;
+    height: 120px;
+    margin: 10px auto 10px auto;
+    font-size: 24px;
+    font-weight: lighter;
+    text-align: left;
+    padding-left:15px;
+    padding-top:10px;
+}
+
+.box_days_worked{
+    background-color: #20242D;
+    border-radius: 9px;
+    width: 70vw;
+    height: 35vw;
+    margin: 10px auto 10px auto;
+    font-size: 24px;
+    font-weight: lighter;
+    text-align: left;
+    padding-left:15px;
+    padding-top:10px;
+}
+
+.name_fine{
+    display: inline-block;
+    width: 22vw;
+    height: 120px;
+    margin: 0px auto 0px auto;
+    position: relative;
+    bottom: 50px;
+}
+
+.amout_fine{
+    display: inline-block;
+    width: 22vw;
+    height: 120px;
+    margin: 0px auto 0px auto;
+    position: relative;
+    bottom: 20px;
+    text-align: center;
+}
+
+.reason_fine{
+    display: inline-block;
+    width: 22vw;
+    height: 120px;
+    margin: 0px auto 0px auto;
+    text-align: right;
+}

@@ -66,11 +66,33 @@ if (isset($_SESSION['id']) && isset($_SESSION['login'])) {
                </div>
                <div class="info_box">
                     Штрафы
-                    <h1 class="info_text_main" style="color: #F8BABA;">₽ 500.00 </h1>
+                    <h1 class="info_text_main" style="color: #F8BABA;">₽ 
+                         <?php 
+                              require('assets/data/db.php');
+                              $names = $_SESSION['fio'];
+
+                              $sql = "SELECT SUM(`amount`) FROM `fine` WHERE `names` = '$names'";
+                              $result = mysqli_query($conn, $sql);
+                              $row = mysqli_fetch_assoc($result);
+
+                              echo $row['SUM(`amount`)'];
+                         ?>
+                    </h1>
                </div>
                <div class="info_box">
                     Счёт
-                    <h1 class="info_text_main" style="color: #CDF8BA;">₽ 999.999.999 </h1>
+                    <h1 class="info_text_main" style="color: #CDF8BA;">₽ 
+                         <?php 
+                              require('assets/data/db.php');
+                              $names = $_SESSION['fio'];
+
+                              $sql = "SELECT * FROM `wallet` WHERE `names` = '$names'";
+                              $result = mysqli_query($conn, $sql);
+                              $row = mysqli_fetch_assoc($result);
+
+                              echo $row['amount'];
+                         ?>
+                    </h1>
                </div>
                <div class="info_but"><a href="smen.php"><img style="margin-top:10px; margin-right:10px;" src="/assets/icons/box-arrow-in-right.svg" alt="Bootstrap" width="32" height="32"></a></div>
                <div class="info_but"><a href="wallet.php"><img style="margin-top:10px; margin-right:10px;" src="/assets/icons/box-arrow-in-right.svg" alt="Bootstrap" width="32" height="32"></a></div>

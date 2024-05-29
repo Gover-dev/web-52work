@@ -42,6 +42,54 @@
                };
             ?>
         </div>
+        <div class="center panel_main mw-100">
+            <div class="wallet_box">
+               Счёт
+               <h1 class="info_text_main" style="color: #CDF8BA;">₽ 
+                    <?php 
+                        require('assets/data/db.php');
+                        $names = $_SESSION['fio'];
+
+                        $sql = "SELECT * FROM `wallet` WHERE `names` = '$names'";
+                        $result = mysqli_query($conn, $sql);
+                        $row = mysqli_fetch_assoc($result);
+
+                        echo $row['amount'];
+                    ?>
+                </h1>
+            </div>
+            <div class="wallet_box">
+                <div class="name_fine">Штрафы</div>
+
+                <h1 class="info_text_main amout_fine" style="color: #F8BABA;">₽ 
+                    <?php 
+                        require('assets/data/db.php');
+                        $names = $_SESSION['fio'];
+
+                        $sql = "SELECT SUM(`amount`) FROM `fine` WHERE `names` = '$names'";
+                        $result = mysqli_query($conn, $sql);
+                        $row = mysqli_fetch_assoc($result);
+
+                       echo $row['SUM(`amount`)'];
+                    ?>
+                </h1>
+
+                <div class="reason_fine" style="color: #F8BABA;">
+                    <?php
+                        $sql = "SELECT * FROM `fine` WHERE `names` = '$names'";
+                        $result = mysqli_query($conn, $sql);
+
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<p>' . $row["reason"] . '</p>';
+                        };
+                    ?>
+                </div>         
+            </div>
+
+            <div class="box_days_worked">
+                Отработка
+            </div>
+        </div>
         
         <div class="logout">
             <h6 style="display:inline;" ><?php echo $_SESSION['fio']; ?></h6>
