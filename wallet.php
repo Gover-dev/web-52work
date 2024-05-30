@@ -74,13 +74,13 @@
                     ?>
                 </h1>
 
-                <div class="reason_fine" style="color: #F8BABA;">
+                <div class="reason_fine" id="reason_fine" style="color: #F8BABA;">
                     <?php
                         $sql = "SELECT * FROM `fine` WHERE `names` = '$names'";
                         $result = mysqli_query($conn, $sql);
 
                         while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<p>' . $row["reason"] . '</p>';
+                            echo '<p>' . $row["amount"] . '₽ - ' . $row["reason"] . '</p>';
                         };
                     ?>
                 </div>         
@@ -88,6 +88,51 @@
 
             <div class="box_days_worked">
                 Отработка
+                <form class="center" method='post'>
+                    <select name='data_m' class="select_col">
+                        <option value="01">Январь</option>
+                        <option value="02">Февраль</option>
+                        <option value="03">Март</option>
+                        <option value="04">Апрель</option>
+                        <option value="05">Май</option>
+                        <option value="06">Июнь </option>
+                        <option value="07">Июль </option>
+                        <option value="08">Август </option>
+                        <option value="09">Сентябрь </option>
+                        <option value="10">Октябрь </option>
+                        <option value="11">Ноябрь </option>
+                        <option value="11">Декабрь</option>
+                    </select>
+                    <input class='btn btn-dark' type='submit' value='Выбарть'>
+                </form>
+                <div class="days_worked">
+                    <?php
+                        $data_m = $_POST['data_m'];
+                        $sql = "SELECT * FROM `smena`";
+                        $result = mysqli_query($conn, $sql);
+
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $m = date('m', strtotime($row["data_smena"]));
+                            if ($m == $data_m) {
+                                if ($row["accept_smen"] == 0 ){
+                                    if ($row["fio_smena"] == "$names"){
+                                        $d = date('d', strtotime($row["data_smena"]));
+                                        echo '<div class="days" >'. $d .'</div>';
+                                    }else{
+                                        $d = date('d', strtotime($row["data_smena"]));
+                                        echo '<div class="days" style="background-color: #00000000;">'. $d .'</div>';
+                                    }
+                                }elseif ($row["accept_smen"] == 1 and $row["fio_smena"] == "$names") {
+                                    $d = date('d', strtotime($row["data_smena"]));
+                                    echo '<div class="days" style="background-color: #5aa942; border: 2px solid #00000000;">' . $d . '</div>';
+                                } elseif($row["accept_smen"] == 2 and $row["fio_smena"] == "$names"){
+                                    $d = date('d', strtotime($row["data_smena"]));
+                                    echo '<div class="days" style="background-color: #A94442; border: 2px solid #00000000;">' . $d . '</div>';
+                                };
+                            };
+                        };
+                    ?>
+                </div>
             </div>
         </div>
         

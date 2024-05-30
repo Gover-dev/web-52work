@@ -51,15 +51,6 @@
                     $result = mysqli_query($conn, $sql);
                     
                     if ($result->num_rows > 0) {
-                        echo '<div class="input-group">';
-                        echo '    <div id="search-autocomplete" class="form-outline" data-mdb-input-init>';
-                        echo '        <input type="search" id="form1" class="form-control" />';
-                        echo '        <label class="form-label" for="form1">Search</label>';
-                        echo '    </div>';
-                        echo '    <button type="button" class="btn btn-dark" data-mdb-ripple-init>';
-                        echo '        <i class="fas fa-search"></i>';
-                        echo '    </button>';
-                        echo '</div>';
                         // Вывод заголовков столбцов
                         echo "<form method='post'>";
                         echo "<select class='form-select form-select-lg mb-3 btn-dark' name='data_i'>";

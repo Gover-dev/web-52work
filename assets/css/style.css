@@ -307,13 +307,31 @@ input::-webkit-input-placeholder { /* Для Safari и Chrome */
     padding-top:10px;
 }
 
+.days_worked{
+    border: 2px solid #32363E;
+    border-radius: 9px;
+    width: 365px;
+    height: 390px;
+    margin: 0 auto;
+}
+
+.days{
+    border: 2px solid #32363E;
+    background-color: #32363E;
+    display: inline-block;
+    border-radius: 9px;
+    margin: 5px 5px 0px 5px;
+    width: 50px;
+    height: 50px;
+}
+
 .name_fine{
     display: inline-block;
     width: 22vw;
     height: 120px;
     margin: 0px auto 0px auto;
     position: relative;
-    bottom: 50px;
+    bottom: 70px;
 }
 
 .amout_fine{
@@ -322,14 +340,33 @@ input::-webkit-input-placeholder { /* Для Safari и Chrome */
     height: 120px;
     margin: 0px auto 0px auto;
     position: relative;
-    bottom: 20px;
+    bottom: 40px;
     text-align: center;
 }
 
 .reason_fine{
     display: inline-block;
     width: 22vw;
-    height: 120px;
-    margin: 0px auto 0px auto;
+    height: 100px;
     text-align: right;
+    overflow-y: scroll;
+}
+
+#reason_fine::-webkit-scrollbar {
+    background-color: #ffffff00;
+}
+  
+#reason_fine::-webkit-scrollbar-thumb {
+    background-color: none;
+}
+  
+#reason_fine::-webkit-scrollbar-track {
+    background-color: none;
+}
+
+.select_col {
+    -webkit-appearance: none;
+    border-radius: 9px;
+    background: #32363E;
+    marg
 }
