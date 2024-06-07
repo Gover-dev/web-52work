@@ -45,9 +45,9 @@
         <div class="center panel_main mw-100">
             <div class="board_chat">
                 <div class="global_chat">
-
+                    <h5 style="position: relative">Общий чат</h5>
                 </div>
-
+                Локальные чаты и авто скролл
             </div>
             <div class="body_chat">
                 <div class="box_chat" id="box_chat">

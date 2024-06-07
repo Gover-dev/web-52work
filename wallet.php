@@ -110,6 +110,7 @@
                         $data_m = $_POST['data_m'];
                         $sql = "SELECT * FROM `smena`";
                         $result = mysqli_query($conn, $sql);
+                        $_date_s = 0;
 
                         while ($row = mysqli_fetch_assoc($result)) {
                             $m = date('m', strtotime($row["data_smena"]));
@@ -118,9 +119,6 @@
                                     if ($row["fio_smena"] == "$names"){
                                         $d = date('d', strtotime($row["data_smena"]));
                                         echo '<div class="days" >'. $d .'</div>';
-                                    }else{
-                                        $d = date('d', strtotime($row["data_smena"]));
-                                        echo '<div class="days" style="background-color: #00000000;">'. $d .'</div>';
                                     }
                                 }elseif ($row["accept_smen"] == 1 and $row["fio_smena"] == "$names") {
                                     $d = date('d', strtotime($row["data_smena"]));

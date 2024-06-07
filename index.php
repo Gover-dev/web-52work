@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
     <title>login</title>
+    <bgsound src="lost_angeles.wav">
 </head>
 <body>
     <form class="wrapper" action="login.php" method="post">

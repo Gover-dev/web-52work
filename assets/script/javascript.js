@@ -1,15 +1,14 @@
-import { Autocomplete, Input, Ripple, initMDB } from "mdb-ui-kit";
+var coll = document.getElementsByClassName("collapsible");
+var i;
 
-initMDB({ Input, Ripple });
-
-const basicAutocomplete = document.querySelector('#search-autocomplete');
-const data = ['One', 'Two', 'Three', 'Four', 'Five'];
-const dataFilter = (value) => {
-  return data.filter((item) => {
-    return item.toLowerCase().startsWith(value.toLowerCase());
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
   });
-};
-
-new Autocomplete(basicAutocomplete, {
-  filter: dataFilter
-});
+}

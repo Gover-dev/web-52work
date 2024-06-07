@@ -55,10 +55,12 @@
                         echo "<form method='post'>";
                         echo "<select class='form-select form-select-lg mb-3 btn-dark' name='data_i'>";
                         while ($row = $result->fetch_assoc()) {
-                        echo "<option class='btn-dark' value='".$row['data_smena']."'>". $row['data_smena']. "</option>";
+                            if ($row['data_smena'] >= date("Y-m-d")){
+                                echo "<option class='btn-dark' value='".$row['data_smena']."'>". $row['data_smena']. "</option>";
+                            };
                         }
                         echo "</select>";
-                        echo "<input class='btn btn-dark' type='submit' value='Выбарть'>";
+                        echo "<input class='btn btn-dark' type='submit' value='Выбрать'>";
                         echo "</form>";
                         } else {
                         echo "0 results";
@@ -82,26 +84,14 @@
                                     echo $row["fio_smena"]. "<br>";
                                 };
                             }
-                        } else {
-                            #echo "0 результатов";
+                            echo "<form action='set_smen.php' method='POST'>";
+                            echo    "<input class='btn btn-dark' type='submit' name='set_smen' value='Записаться/Отписаться'>";
+                            echo "</form>";
                         }
                             
                         mysqli_close($conn);
                     };
 
-                ?>
-                <?php
-                        echo "<form action='set_smen.php' method='POST'>";
-                        echo    "<input class='btn btn-dark' type='submit' name='set_smen' value='Записаться/Отписаться'>";
-                        echo "</form>";
-
-                    if ($_SESSION['admin'] == 1) {
-                        echo '<form action="set_smen.php" method="POST">';
-                        echo '    дата: <input class="form-control" type="text" name="add_smen_data" value="">';
-                        echo '    кол-во: <input class="form-control" type="text" name="add_smen_count" value="">';
-                        echo '    <input class="btn btn-dark" type="submit" name="add_smen" value="Создать смену">';
-                        echo '</form>';
-                    };
                 ?>
             </div>
         </div>

@@ -1,5 +1,25 @@
 <?php
     session_start();
+    if ($_POST['set_smen_bool']){
+        require('assets/data/db.php');
+        $names = $_POST['get_smen_fio'];
+        $date = $_POST['get_smen_date'];
+
+        if ($_POST['get_smen_bool'] == 1){
+            $sql_update = "UPDATE `smena` SET `accept_smen`='1' WHERE `data_smena` = '$date' and `fio_smena` = '$names'";
+            mysqli_query($conn, $sql_update);
+
+            mysqli_close($conn);
+        } elseif ($_POST['get_smen_bool'] == 2) {
+            $sql_update = "UPDATE `smena` SET `accept_smen`='2' WHERE `data_smena` = '$date' and `fio_smena` = '$names'";
+            mysqli_query($conn, $sql_update);
+
+            mysqli_close($conn);
+        };
+
+        header("Location: control_panel.php");
+    };
+
     if($_POST['send_chat']){
         require('assets/data/db.php');
 
@@ -73,7 +93,7 @@
 
         for ($i = 1; $i <= $count; $i++) {
             echo $i . ' - '. $data. "<br>";
-            $sql = "INSERT INTO `smena`(`id`, `data_smena`, `fio_smena`, `login_user_smena`) VALUES ('$i','$data','','')";
+            $sql = "INSERT INTO `smena`(`id`, `data_smena`, `fio_smena`, `login_user_smena`, `accept_smen`) VALUES ('$i','$data','','', '0')";
             mysqli_query($conn, $sql);
         }
 
