@@ -12,7 +12,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['login'])) {
 	
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script href="assets/script/javascript.js"></script>
     <title>HOME</title>
 </head>
 <body>
@@ -44,6 +43,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['login'])) {
      </div>
      <div class="panel_main">
             <div class="control_box" style="background-color: #171820; color: #fff;">
+                Регистрация сотрудника
                     <form action="control_users.php" method="post">
                         <?php if (isset($_GET['error'])) { ?>
                         <p class="error"><?php echo $_GET['error']; ?></p>
@@ -90,6 +90,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['login'])) {
             </div>
 
             <div class="control_box" style="background-color: #171820; color: #fff;">
+                Сотрудники
                     <?php
                         require('assets/data/db.php');
                         $sql = "SELECT `fio`FROM `users`";
@@ -136,6 +137,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['login'])) {
                     ?>
             </div>
             <div class="control_box" style="background-color: #171820; color: #fff;">
+                Смена
                 <?php
                     require('assets/data/db.php');
                     $sql = "SELECT DISTINCT data_smena FROM `smena` ";
@@ -191,6 +193,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['login'])) {
                 ?>
             </div>
             <div class="control_box" style="background-color: #171820; color: #fff;">
+                Создания списка смены
                 <?php
                     if ($_SESSION['admin'] == 1) {
                         echo '<form action="set_smen.php" method="POST">';
@@ -201,10 +204,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['login'])) {
                     };
                 ?>
             </div>
-            <button type="button" class="collapsible">Открыть</button>
-            <div class="content">
-                <p>Lorem ipsum...</p>
-            </div>
+            
         </div>
         <div class="logout">
             <h6 style="display:inline;" ><?php echo $_SESSION['fio']; ?></h6>
