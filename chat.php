@@ -47,7 +47,6 @@
                 <div class="global_chat">
                     <h5 style="position: relative">Общий чат</h5>
                 </div>
-                Локальные чаты и авто скролл
             </div>
             <div class="body_chat">
                 <div class="box_chat" id="box_chat">
@@ -77,7 +76,7 @@
 
                     <form action="set_smen.php" method="POST">
                     <input class="send_panel_chat" type="text" name="send_chat_messenge" value="">
-                    <input class="send_but_chat" type="submit" name="send_chat" value="Создать смену">
+                    <input class="send_but_chat" type="submit" name="send_chat" value=">">
                     </form>
                
             </div>

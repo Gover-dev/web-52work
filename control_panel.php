@@ -146,7 +146,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['login'])) {
                     if ($result->num_rows > 0) {
                         // Вывод заголовков столбцов
                         echo "<form method='post'>";
-                        echo "<select class='form-select form-select-lg mb-3 btn-dark' name='data_i'>";
+                        echo "<select class='form-select form-select-lg mb-3 btn-dark' name='data_i' style='background-color: #171820; color: #fff;'>";
                         while ($row = $result->fetch_assoc()) {
                         echo "<option class='btn-dark' value='".$row['data_smena']."'>". $row['data_smena']. "</option>";
                         }
